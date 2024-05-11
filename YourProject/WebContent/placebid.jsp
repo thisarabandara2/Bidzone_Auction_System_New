@@ -65,16 +65,32 @@
             padding-top: 60px; /* Adjusted to accommodate the fixed header */
             background-color: #f8f9fa; /* Background color */
         }
-        #header {
-            background-color: #007bff; /* Header background color */
-            color: #fff; /* Header text color */
+       #header {
+            background-color: #0056b3; /* Header background color */
+            color: #ffffff ; /* Header text color */
             text-align: center;
             padding: 20px 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000; /* Ensure header is on top */
         }
+		#header h1 {
+			margin: 0;
+			font-size: 28px;
+			font-weight: bold;
+			padding-left: 5%;
+		}
+		.topnav li {
+			display: inline;
+			padding: 0 10px;
+		}
+		
+		.topnav li a {
+			color: #fff;
+			text-decoration: none;
+			font-size: 16px;
+		}
+		
+		.topnav li.active a {
+			font-weight: bold;
+		}
         .footer {
             background-color: #343a40;
             color: #fff;

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>E-Auction | </title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Bootstrap CSS -->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<!-- Cosmo theme -->
+<link href="https://bootswatch.com/4/cosmo/bootstrap.min.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="scripts/jquery-1.7.2.min.js"></script>
+<script src="scripts/jquery-mobilemenu.min.js"></script>
+<script>
+$(document).ready(function () {
+    $('.topnav').mobileMenu({
+        combine: false,
+        switchWidth: 600,
+        prependTo: 'nav#topnav'
+    });
+});
+</script>
+<!--[if lt IE 9]>
+<link rel="stylesheet" href="styles/ie.css" type="text/css" media="all">
+<script src="scripts/css3-mediaqueries.min.js"></script>
+<script src="scripts/html5shiv.min.js"></script>
+<![endif]-->
+<style>
+html, body {
+    height: 100%;
+}
+.wrapper {
+    min-height: 100%;
+    margin-bottom: -100px; /* negative value of footer height */
+}
+.footer,
+.push {
+    height: 100px; /* height of footer */
+}
+/* Reduce margin for h2 */
+#container h2 {
+    margin-top: 10px;
+}
+</style>
+</head>
+<body>
+<div class="wrapper row1">
+  <header id="header" class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <hgroup>
+        <h1><a class="navbar-brand" href="home.jsp">E-Auction</a></h1>
+        
+      </hgroup>
+      <!-- ################################################################################################ -->
+      <nav id="topnav">
+        <ul class="topnav clear navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="home.jsp">Home</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="products.jsp">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="aboutUs.jsp">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contactUs.jsp">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="registration.jsp">Registration</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login.jsp">Log In</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+</div>
+<!-- content -->
+<div class="wrapper">
+  <div id="container">
+  <h2 class="text-center">Best Price, Best Products</h2>
+    <!-- ################################################################################################ -->
+    <!-- content body -->
+    <section id="gallery" class="clear">
+      <div class="jumbotron text-center">
+        <h1 class="display-4">Few Steps Away from being the owner of a great product</h1>
+      </div>
+    </section>
+    <!-- / content body -->
+    <!-- ################################################################################################ -->
+    <div class="clear"></div>
+  </div>
+</div>
+<!-- Footer -->
+<div class="footer bg-primary text-white text-center">
+  <div class="container py-3">
+    <p class="mb-0">Copyright &copy; 2024 - All Rights Reserved</p>
+    <p class="mb-0"><a href="buy.jsp" title="Website Templates"> Goa University</a></p>
+  </div>
+</div>
+</body>
+</html>

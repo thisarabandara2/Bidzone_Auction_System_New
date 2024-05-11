@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>E-Auction | </title>
+<title>BidZone Online Auction </title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Bootstrap CSS -->
@@ -48,7 +48,7 @@ html, body {
 <div class="wrapper row1">
   <header id="header" class="navbar navbar-expand-lg navbar-dark bg-primary">
     <hgroup>
-      <h1><a class="navbar-brand" href="home.jsp">E-Auction</a></h1>
+      <h1><a class="navbar-brand" href="home.jsp">BidZone Online Auction</a></h1>
     </hgroup>
     <%
     String userName = (String) request.getSession().getAttribute("username");

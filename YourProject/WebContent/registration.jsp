@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>E-Auction |</title>
+<title>BidZone Online Auction</title>
 <!-- Bootstrap CSS -->
 <link
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -142,7 +142,7 @@ button[type="submit"], button[type="reset"] {
 			class="navbar navbar-expand-lg navbar-dark bg-primary">
 			<hgroup>
 				<h1>
-					<a class="navbar-brand ml-5" href="home.jsp">Bidzone Auction</a>
+					<a class="navbar-brand ml-5" href="home.jsp">BidZone Online Auction</a>
 				</h1>
 			</hgroup>
 			<%
@@ -274,8 +274,7 @@ button[type="submit"], button[type="reset"] {
 		<div class="container">
 			<p class="mb-0">Copyright &copy; 2024 - All Rights Reserved</p>
 			<p class="mb-0">
-				<a href="registration.jsp" title="Website Templates"> Goa
-					University</a>
+				<a href="registration.jsp" title="Website Templates"> </a>
 			</p>
 		</div>
 	</div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-<title>E-Auction | </title>
+<title>BidZone Online Auction </title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Bootstrap CSS -->
@@ -71,7 +71,7 @@ body {
 <div class="wrapper row1">
   <header id="header" class="navbar navbar-expand-lg navbar-dark bg-primary">
     <hgroup>
-      <h1><a class="navbar-brand" href="home.jsp">E-Auction</a></h1>
+      <h1><a class="navbar-brand" href="home.jsp">BidZone Online Auction</a></h1>
     </hgroup>
     <%
     String userName = (String) request.getSession().getAttribute("username");
@@ -196,7 +196,7 @@ body {
   <footer id="copyright" class="footer bg-primary text-white py-4">
     <div class="container text-center">
       <p class="mb-0">Copyright &copy; 2024 - All Rights Reserved </p>
-      <p class="mb-0"><a href="products.jsp" title="Website Templates"> University Of Ruhuna</a></p>
+      <p class="mb-0"><a href="products.jsp" title="Website Templates"></a></p>
     </div>
   </footer>
 </div>

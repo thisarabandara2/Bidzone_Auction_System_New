@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-<title>E-Auction | </title>
+<title>BidZone Online Auction </title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Bootstrap CSS -->
@@ -31,7 +31,7 @@ $(document).ready(function () {
 <div class="wrapper row1">
   <header id="header" class="navbar navbar-expand-lg navbar-dark bg-primary">
     <hgroup>
-      <h1><a class="navbar-brand" href="home.jsp">E-Auction</a></h1>
+      <h1><a class="navbar-brand" href="home.jsp">BidZone Online Auction</a></h1>
     </hgroup>
     <!-- ################################################################################################ -->
     <nav id="topnav">
@@ -65,7 +65,8 @@ $(document).ready(function () {
     <!-- ################################################################################################ -->
     <!-- content body -->
     <section id="gallery" class="clear">
-      <h2 class="text-center">Best Price, Best Products</h2>
+     <!--  <h2 class="text-center">Best Price, Best Products</h2> -->
+      <h2 class="text-center"> Register Your Product</h2>
       <div class="row justify-content-center">
         <div class="col-md-6">
           <div class="card">
@@ -118,7 +119,7 @@ $(document).ready(function () {
   <footer id="copyright" class="clear bg-primary text-white py-4">
     <div class="container text-center">
       <p class="mb-0">Copyright &copy; 2024 - All Rights Reserved </p>
-      <p class="mb-0"><a href="register.jsp" title="Website Templates"> Goa University</a></p>
+      <p class="mb-0"><a href="register.jsp" title="Website Templates"></a></p>
     </div>
   </footer>
 </div>

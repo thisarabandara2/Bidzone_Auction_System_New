@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Auction | </title>
+    <title>BidZone Online Auction </title>
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Cosmo theme -->
@@ -50,7 +50,7 @@
 <div class="wrapper row1">
   <header id="header" class="navbar navbar-expand-lg navbar-dark bg-primary">
     <hgroup>
-      <h1><a class="navbar-brand" href="home.jsp">Bidzone Auction</a></h1>
+      <h1><a class="navbar-brand" href="home.jsp">BidZone Online Auction</a></h1>
     </hgroup>
     <%
     String userName = (String) request.getSession().getAttribute("username");
@@ -105,7 +105,7 @@
                             Connection connection = null;
                             Class.forName("com.mysql.jdbc.Driver").newInstance();
 
-                            connection = DriverManager.getConnection(connectionURL, "root","12345678");
+                            connection = DriverManager.getConnection(connectionURL, "root","root");
 
                             stmt = connection.createStatement();
                             qryStr = "SELECT * from Products";
@@ -135,8 +135,8 @@
             </div>
         </div>
         <!-- Footer -->
-        <footer id="footer" class="bg-primary text-white py-4">
-            <div class="container text-center">
+        <footer id="footer" >
+            <div class="container">
                 <p class="mb-0">&copy; 2024 E-Auction. All rights reserved.</p>
             </div>
         </footer>

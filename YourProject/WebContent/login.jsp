@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Auction | Login</title>
+    <title>BidZone Online Auction</title>
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Cosmo theme -->
@@ -119,7 +119,7 @@
     <header id="header">
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <a class="navbar-brand" href="home.jsp">E-Auction</a>
+            <a class="navbar-brand" href="home.jsp">BidZone Online Auction</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -173,7 +173,7 @@
                         <input type="password" class="form-control" id="password" name="password" maxlength="50" required>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
-                    <button type="reset" class="btn btn-secondary">Reset</button>
+                   <!--  <button type="reset" class="btn btn-secondary">Reset</button> -->
                 </form>
             </div>
         </section>
@@ -184,7 +184,7 @@
 <div class="footer bg-primary text-white text-center">
     <div class="container">
         <p class="mb-0">Copyright &copy; 2024 - All Rights Reserved</p>
-        <p class="mb-0"><a href="login.jsp" title="Website Templates"> Goa University</a></p>
+        <p class="mb-0"><a href="login.jsp" title="Website Templates"></a></p>
     </div>
 </div>
 </body>

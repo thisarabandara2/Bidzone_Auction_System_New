@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Auction | </title>
+    <title>BidZone Online Auction</title>
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Cosmo theme -->
@@ -58,7 +58,7 @@
 <div class="wrapper row1">
   <header id="header" class="navbar navbar-expand-lg navbar-dark bg-primary">
     <hgroup>
-      <h1><a class="navbar-brand" href="home.jsp">Bidzone</a></h1>
+      <h1><a class="navbar-brand" href="home.jsp">BidZone Online Auction</a></h1>
     </hgroup>
     <%
     String userName = (String) request.getSession().getAttribute("username");
@@ -89,7 +89,7 @@
             </li>
         <% } else { %>
             <li class="nav-item">
-                <a class="nav-link" href="registration.jsp">Registration</a>
+               <a class="nav-link" href="registration.jsp">Registration</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="login.jsp">Log In</a>
@@ -117,11 +117,11 @@
                         <form action="CreateAuctionServletPath?pid=<%= pid %>" method="post">
                             <div class="form-group">
                                 <label for="startdate">Start Date</label>
-                                <input type="text" class="form-control" name="startdate" id="startdate">
+                                <input type="date" class="form-control" name="startdate" id="startdate">
                             </div>
                             <div class="form-group">
                                 <label for="enddate">End Date</label>
-                                <input type="text" class="form-control" name="enddate" id="enddate">
+                                <input type="date" class="form-control" name="enddate" id="enddate">
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                             <button type="reset" class="btn btn-secondary">Reset</button>
@@ -137,7 +137,7 @@
 <div class="footer">
     <div class="container">
         <p class="mb-0">Copyright &copy; 2024 - All Rights Reserved</p>
-        <p class="mb-0"><a href="contactUs.jsp" title="Website Templates"> Goa University</a></p>
+        <p class="mb-0"><a href="contactUs.jsp" title="Website Templates"></a></p>
     </div>
 </div>
 

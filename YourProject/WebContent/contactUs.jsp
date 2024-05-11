@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Auction | </title>
+    <title> BidZone Online Auction</title>
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Cosmo theme -->
@@ -50,7 +50,7 @@
 <div class="wrapper row1">
   <header id="header" class="navbar navbar-expand-lg navbar-dark bg-primary">
     <hgroup>
-      <h1><a class="navbar-brand" href="home.jsp">Bidzone</a></h1>
+      <h1><a class="navbar-brand" href="home.jsp">BidZone Online Auction</a></h1>
     </hgroup>
     <%
     String userName = (String) request.getSession().getAttribute("username");

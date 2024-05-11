@@ -34,6 +34,9 @@
         }
         #content {
             padding-bottom: 60px; /* Height of the footer */
+            
+            
+        }
         }
         #footer {
             position: absolute;
@@ -44,39 +47,52 @@
     </style>
 </head>
 <body>
-    <div id="wrapper">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <div class="container">
-                <a class="navbar-brand" href="home.jsp">E-Auction</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="home.jsp">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="products.jsp">Products</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="aboutUs.jsp">About Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contactUs.jsp">Contact Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="registration.jsp">Registration</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="login.jsp">Login</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <div id="content" class="container mt-5">
+<div class="wrapper row1">
+  <header id="header" class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <hgroup>
+      <h1><a class="navbar-brand" href="home.jsp">Bidzone Auction</a></h1>
+    </hgroup>
+    <%
+    String userName = (String) request.getSession().getAttribute("username");
+    boolean isLoggedIn = userName != null;
+	%>
+    
+    <!-- ################################################################################################ -->
+    <nav id="topnav" class="ml-auto active">
+      <ul class="topnav clear navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="home.jsp">Home</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="products.jsp">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="aboutUs.jsp">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contactUs.jsp">Contact Us</a>
+        </li>
+        <% if (isLoggedIn) { %>
+            <li class="nav-item">
+                <a class="nav-link" href="userProfile.jsp"><%= userName %></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="logout.jsp">Log Out</a>
+            </li>
+        <% } else { %>
+            <li class="nav-item">
+                <a class="nav-link" href="registration.jsp">Registration</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="login.jsp">Log In</a>
+            </li>
+        <% } %>
+      </ul>
+    </nav>
+    <div class="clear"></div>
+  </header>
+</div>
+        <div id="content" class="container mt-3">
             <div class="row">
                 <div class="col">
                     <h2 class="mb-4">Products for Auction</h2>
@@ -88,17 +104,20 @@
                             String connectionURL = "jdbc:mysql://localhost:3306/test2";
                             Connection connection = null;
                             Class.forName("com.mysql.jdbc.Driver").newInstance();
-                            connection = DriverManager.getConnection(connectionURL, "root", "");
+
+                            connection = DriverManager.getConnection(connectionURL, "root","12345678");
+
                             stmt = connection.createStatement();
                             qryStr = "SELECT * from Products";
                             rs = stmt.executeQuery(qryStr);
                             while (rs.next()) {
                         %>
+                       
                         <div class="col-lg-4 col-md-6 mb-4">
                             <div class="card">
                                 <img src="<%=rs.getString("imagepath")%>" class="card-img-top product-img" alt="Product Image">
                                 <div class="card-body">
-                                    <h5 class="card-title"><%=rs.getString("productName")%></h5>
+                                    <h5 class="card-title"><%=rs.getString("prodname")%></h5>
                                     <p class="card-text"><%=rs.getString("description")%></p>
                                     <a href="<%=request.getContextPath()%>/ProductDescriptionServletPath?pid=<%=rs.getString("productId")%>"
                                         class="btn btn-primary">View Details</a>

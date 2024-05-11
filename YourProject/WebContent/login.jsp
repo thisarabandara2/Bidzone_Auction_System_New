@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Auction | </title>
+    <title>E-Auction | Login</title>
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Cosmo theme -->
@@ -31,6 +31,7 @@
             position: relative;
             min-height: 100vh;
             margin-bottom: 60px; /* Margin to prevent content from being hidden behind the footer */
+            background-color: #f8f9fa; /* Background color */
         }
         #header {
             background-color: #007bff; /* Header background color */
@@ -68,6 +69,48 @@
             color: #fff;
             text-align: center;
             padding-top: 20px;
+        }
+        /* Login Form Styles */
+        .login-form {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 400px; /* Reduced width */
+            margin: auto; /* Center the form horizontally */
+            margin-top: 80px;
+            
+        }
+        .login-form label {
+            font-weight: bold;
+        }
+        .login-form input[type="text"],
+        .login-form input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .login-form button[type="submit"],
+        .login-form button[type="reset"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: #fff;
+            font-weight: bold;
+        }
+        .login-form button[type="reset"] {
+            background-color: #6c757d;
+        }
+        .login-form button[type="submit"]:hover,
+        .login-form button[type="reset"]:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
@@ -116,8 +159,10 @@
                     <%= request.getSession().getAttribute("error_message") %>
                 </div>
             <% request.getSession().removeAttribute("error_message"); } %>
-            <figure>
-                <header class="mt-5">User Login</header>
+            <div class="login-form">
+                <header class="mt-5 mb-4 text-center">
+                    <h2>User Login</h2>
+                </header>
                 <form id='login' action='LoginServletPath' method='post' accept-charset='UTF-8'>
                     <div class="form-group">
                         <label for="username">Username</label>
@@ -130,8 +175,7 @@
                     <button type="submit" class="btn btn-primary">Submit</button>
                     <button type="reset" class="btn btn-secondary">Reset</button>
                 </form>
-                <figcaption></figcaption>
-            </figure>
+            </div>
         </section>
         <!-- / content body -->
     </div>

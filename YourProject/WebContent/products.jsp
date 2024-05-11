@@ -73,8 +73,13 @@ body {
     <hgroup>
       <h1><a class="navbar-brand" href="home.jsp">E-Auction</a></h1>
     </hgroup>
+    <%
+    String userName = (String) request.getSession().getAttribute("username");
+    boolean isLoggedIn = userName != null;
+	%>
+    
     <!-- ################################################################################################ -->
-    <nav id="topnav">
+    <nav id="topnav" class="ml-auto">
       <ul class="topnav clear navbar-nav ml-auto">
         <li class="nav-item">
           <a class="nav-link" href="home.jsp">Home</a>
@@ -88,12 +93,21 @@ body {
         <li class="nav-item">
           <a class="nav-link" href="contactUs.jsp">Contact Us</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="registration.jsp">Registration</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="login.jsp">Log In</a>
-        </li>
+        <% if (isLoggedIn) { %>
+            <li class="nav-item">
+                <a class="nav-link" href="userProfile.jsp"><%= userName %></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="logout.jsp">Log Out</a>
+            </li>
+        <% } else { %>
+            <li class="nav-item">
+                <a class="nav-link" href="registration.jsp">Registration</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="login.jsp">Log In</a>
+            </li>
+        <% } %>
       </ul>
     </nav>
     <div class="clear"></div>
@@ -141,6 +155,7 @@ body {
               <i class="fas fa-registered fa-4x mb-3"></i>
               <h5 class="card-title">Product Registration</h5>
               <p class="card-text">Register Your Product!</p>
+              
             </div>
           </a>
         </div>
@@ -181,7 +196,7 @@ body {
   <footer id="copyright" class="footer bg-primary text-white py-4">
     <div class="container text-center">
       <p class="mb-0">Copyright &copy; 2024 - All Rights Reserved </p>
-      <p class="mb-0"><a href="products.jsp" title="Website Templates"> Goa University</a></p>
+      <p class="mb-0"><a href="products.jsp" title="Website Templates"> University Of Ruhuna</a></p>
     </div>
   </footer>
 </div>

@@ -114,7 +114,11 @@ $(document).ready(function () {
           while (i < size) {
               Products p = productList.get(i);
       %>
-              <li>Product Name: <a class="product-link" href="createAuction.jsp?pid=<%= p.getProductId() %>"><%= p.getProdname() %></a></li>
+            <li>Product Name: <a class="product-link" href="createAuction.jsp?pid=<%= p.getProductId() %>"><%= p.getProdname() %></a><form action="deleteProduct.jsp" method="post" style="display: inline;">
+          	<input type="hidden" name="productId" value="<%= p.getProductId() %>">
+          	<button type="submit" class="delete-btn">Delete</button>
+        	</form></li>
+              
       <% 
               i++;
           }

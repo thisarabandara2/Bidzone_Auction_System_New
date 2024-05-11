@@ -30,33 +30,61 @@
     <![endif]-->
     <style>
         body {
-            padding-top: 60px; /* Adjusted to accommodate the fixed header */
-            background-color: #f8f9fa; /* Background color */
+            position: relative;
+            min-height: 100vh;
         }
-        #header {
-            background-color: #007bff; /* Header background color */
-            color: #fff; /* Header text color */
-            text-align: center;
-            padding: 20px 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000; /* Ensure header is on top */
+        .wrapper {
+            margin-bottom: 60px; /* Adjust height based on footer height */
         }
-        .footer {
-            background-color: #343a40;
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
-            width: 100%;
-            position: fixed;
+        #footer {
+            position: absolute;
             bottom: 0;
+            width: 100%;
+            height: 60px; /* Adjust height based on footer height */
+            background-color: #343a40; /* Footer background color */
+            color: #fff; /* Footer text color */
+            text-align: center;
+            padding-top: 20px; /* Adjust padding based on footer content */
         }
+         #header {
+        background-color: #0056b3; /* Header background color */
+        color: #ffffff ; /* Header text color */
+        text-align: center;
+         padding: 20px 0;
+	    }
+		
+		#header h1 {
+			margin: 0;
+			font-size: 28px;
+			font-weight: bold;
+			padding-left: 5%;
+		}
+		
+		#header h2 {
+			margin-top: 5px;
+			font-size: 18px;
+		}
+		
+		.topnav li {
+			display: inline;
+			padding: 0 10px;
+		}
+		
+		.topnav li a {
+			color: #fff;
+			text-decoration: none;
+			font-size: 16px;
+		}
+		
+		.topnav li.active a {
+			font-weight: bold;
+		}
+
     </style>
 </head>
 <body>
 <div class="wrapper row1">
-  <header id="header" class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <header id="header" class="navbar navbar-expand-lg navbar-dark">
     <hgroup>
       <h1><a class="navbar-brand" href="home.jsp">BidZone Online Auction</a></h1>
     </hgroup>
@@ -134,12 +162,12 @@
 </div>
 
 <!-- Footer -->
-<div class="footer">
+<<!-- div class="footer">
     <div class="container">
         <p class="mb-0">Copyright &copy; 2024 - All Rights Reserved</p>
         <p class="mb-0"><a href="contactUs.jsp" title="Website Templates"></a></p>
     </div>
-</div>
+</div> -->
 
 <!-- Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

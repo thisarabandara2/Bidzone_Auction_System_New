@@ -34,10 +34,34 @@
         }
         #content {
             padding-bottom: 60px; /* Height of the footer */
-            
-            
         }
+        #header {
+            background-color: #0056b3; /* Header background color */
+            color: #ffffff ; /* Header text color */
+            text-align: center;
+            padding: 20px 0;
         }
+		#header h1 {
+			margin: 0;
+			font-size: 28px;
+			font-weight: bold;
+			padding-left: 5%;
+		}
+		.topnav li {
+			display: inline;
+			padding: 0 10px;
+		}
+		
+		.topnav li a {
+			color: #fff;
+			text-decoration: none;
+			font-size: 16px;
+		}
+		
+		.topnav li.active a {
+			font-weight: bold;
+		}
+	
         #footer {
             position: absolute;
             bottom: 0;
@@ -48,7 +72,7 @@
 </head>
 <body>
 <div class="wrapper row1">
-  <header id="header" class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <header id="header" class="navbar navbar-expand-lg navbar-dark">
     <hgroup>
       <h1><a class="navbar-brand" href="home.jsp">BidZone Online Auction</a></h1>
     </hgroup>
@@ -95,7 +119,7 @@
         <div id="content" class="container mt-3">
             <div class="row">
                 <div class="col">
-                    <h2 class="mb-4">Products for Auction</h2>
+                    <!-- <h2 class="mb-4">BidZone Online Auction</h2> -->
                     <div class="row">
                         <%  
                             String qryStr = "";
@@ -135,11 +159,13 @@
             </div>
         </div>
         <!-- Footer -->
-        <footer id="footer" >
-            <div class="container">
-                <p class="mb-0">&copy; 2024 E-Auction. All rights reserved.</p>
-            </div>
-        </footer>
-    </div>
+       <!-- <div class="footer">
+		<div class="container">
+			<p class="mb-0">Copyright &copy; 2024 - All Rights Reserved</p>
+			<p class="mb-0">
+				<a href="bid.jsp" title="Website Templates"></a>
+			</p>
+		</div> -->
+	</div>
 </body>
 </html>

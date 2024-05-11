@@ -31,115 +31,146 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 <style>
-body {
-	position: relative;
-	min-height: 100vh;
-	margin-bottom: 60px;
-	/* Margin to prevent content from being hidden behind the footer */
-}
+	body {
+		position: relative;
+		min-height: 100vh;
+		margin-bottom: 60px;
+		/* Margin to prevent content from being hidden behind the footer */
+	}
+	
+	 #header {
+            background-color: #0056b3; /* Header background color */
+            color: #ffffff ; /* Header text color */
+            text-align: center;
+            padding: 20px 0;
+        }
+	
+	#header h1 {
+		margin: 0;
+		font-size: 28px;
+		font-weight: bold;
+	}
+	
+	#header h2 {
+		margin-top: 5px;
+		font-size: 18px;
+	}
+	
+	.topnav li {
+		display: inline;
+		padding: 0 10px;
+	}
+	
+	.topnav li a {
+		color: #fff;
+		text-decoration: none;
+		font-size: 16px;
+	}
+	
+	.topnav li.active a {
+		font-weight: bold;
+	}
+	
+	.footer {
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+		height: 60px;
+		background-color: #343a40;
+		color: #fff;
+		text-align: center;
+		padding-top: 20px;
+	}
+	/* Custom CSS for form styling */
+	.row {
+		display: flex;
+		justify-content: space-between;
+	}
+	
+	.col-md-6 {
+		width: 48%; /* Adjust as needed */
+	}
+	
+	#container {
+		max-width: 1200px; /* Adjust as needed */
+		margin: auto;
+		padding: 20px;
+		text-align: left;
+		border-radius: 10px; /* Add rounded corners */
+	}
+	
+	#container img {
+		margin-top: 30px;
+		margin-left: 30px;
+	}
+	
+	#gallery header {
+		text-align: center;
+		font-size: 2rem;
+		margin-top: 20px;
+	}
+	
+	.form-row {
+		margin-bottom: 15px;
+	}
+	
+	.form-group {
+		margin-bottom: 15px;
+	}
+	
+	.form-group label {
+		font-weight: bold;
+		text-align: left;
+	}
+	
+	.form-control {
+		width: 100%;
+	}
+	
+	/* button[type="submit"], button[type="reset"] {
+		margin-top: 10px;
+	}
+	
+	.footer {
+		margin-top: 20px;
+	} */
+	#button-container{
+			display: flex;           /*flexbox */
+    		justify-content: space-between;  /* Space buttons evenly across the container */ 
+		}
+		#submitBtn, #resetBtn {
+			width: 48%;
+            padding: 10px;
+            border-radius: 10px; /* Rounded corners */
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease; /* Smooth transition on hover */
+		}
+		/* Default button styles */
+        #submitBtn {
+            background-color: #007bff; /* Blue color */
+            color: #fff; /* Text color */ 
+        }
 
-#header {
-	background-color: #007bff; /* Header background color */
-	color: #fff; /* Header text color */
-	text-align: center;
-	padding: 20px 0;
-}
+        #resetBtn {
+            background-color: #6c757d; /* Gray color */
+            color: #fff; /* Text color */
+            width: 50%;
+        }
 
-#header h1 {
-	margin: 0;
-	font-size: 28px;
-	font-weight: bold;
-}
-
-#header h2 {
-	margin-top: 5px;
-	font-size: 18px;
-}
-
-.topnav li {
-	display: inline;
-	padding: 0 10px;
-}
-
-.topnav li a {
-	color: #fff;
-	text-decoration: none;
-	font-size: 16px;
-}
-
-.topnav li.active a {
-	font-weight: bold;
-}
-
-.footer {
-	position: fixed;
-	bottom: 0;
-	width: 100%;
-	height: 60px;
-	background-color: #343a40;
-	color: #fff;
-	text-align: center;
-	padding-top: 20px;
-}
-/* Custom CSS for form styling */
-.row {
-	display: flex;
-	justify-content: space-between;
-}
-
-.col-md-6 {
-	width: 48%; /* Adjust as needed */
-}
-
-#container {
-	max-width: 1200px; /* Adjust as needed */
-	margin: auto;
-	padding: 20px;
-	text-align: left;
-	border-radius: 10px; /* Add rounded corners */
-}
-
-#container img {
-	margin-top: 30px;
-	margin-left: 30px;
-}
-
-#gallery header {
-	text-align: center;
-	font-size: 2rem;
-	margin-top: 20px;
-}
-
-.form-row {
-	margin-bottom: 15px;
-}
-
-.form-group {
-	margin-bottom: 15px;
-}
-
-.form-group label {
-	font-weight: bold;
-	text-align: left;
-}
-
-.form-control {
-	width: 100%;
-}
-
-button[type="submit"], button[type="reset"] {
-	margin-top: 10px;
-}
-
-.footer {
-	margin-top: 20px;
-}
+        /* Hover styles */
+        #resetBtn:hover {
+            background-color: #555555; /* Darker blue on hover */
+        }
+        #submitBtn:hover {
+        	background-color: #0056b3;
+        }
 </style>
 </head>
 <body>
 	<div class="wrapper row1">
 		<header id="header"
-			class="navbar navbar-expand-lg navbar-dark bg-primary">
+			class="navbar navbar-expand-lg navbar-dark">
 			<hgroup>
 				<h1>
 					<a class="navbar-brand ml-5" href="home.jsp">BidZone Online Auction</a>
@@ -191,8 +222,7 @@ button[type="submit"], button[type="reset"] {
 					<!-- content body -->
 					<section id="gallery" class="clear">
 						<figure>
-							<header class="mt-5 mb-4" style="font-size: 2rem">User
-								Registration</header>
+							<header class="mt-5 mb-4" style="font-size: 2rem">User Registration</header>
 							<form id='register' action='UserRegistrationServletPath'
 								method='post' accept-charset='UTF-8'>
 								<div class="form-row">
@@ -252,8 +282,10 @@ button[type="submit"], button[type="reset"] {
 											required />
 									</div>
 								</div>
-								<button type="submit" class="btn btn-primary">Submit</button>
-								<button type="reset" class="btn btn-secondary">Reset</button>
+								<div class="button-container">
+									<button type="submit" class="btn btn-primary" id="submitBtn">Submit</button>
+									<button type="reset" class="btn btn-secondary" id="resetBtn">Reset</button>
+								</div>
 							</form>
 							<figcaption></figcaption>
 						</figure>
@@ -270,13 +302,13 @@ button[type="submit"], button[type="reset"] {
 		</div>
 	</div>
 	<!-- Footer -->
-	<div class="footer bg-primary text-white text-center">
+	<!-- <div class="footer bg-primary text-white text-center">
 		<div class="container">
 			<p class="mb-0">Copyright &copy; 2024 - All Rights Reserved</p>
 			<p class="mb-0">
 				<a href="registration.jsp" title="Website Templates"> </a>
 			</p>
 		</div>
-	</div>
+	</div> -->
 </body>
 </html>

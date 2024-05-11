@@ -44,11 +44,45 @@
             text-align: center;
             padding-top: 20px; /* Adjust padding based on footer content */
         }
+         #header {
+        background-color: #0056b3; /* Header background color */
+        color: #ffffff ; /* Header text color */
+        text-align: center;
+         padding: 20px 0;
+	    }
+		
+		#header h1 {
+			margin: 0;
+			font-size: 28px;
+			font-weight: bold;
+			padding-left: 5%;
+		}
+		
+		#header h2 {
+			margin-top: 5px;
+			font-size: 18px;
+		}
+		
+		.topnav li {
+			display: inline;
+			padding: 0 10px;
+		}
+		
+		.topnav li a {
+			color: #fff;
+			text-decoration: none;
+			font-size: 16px;
+		}
+		
+		.topnav li.active a {
+			font-weight: bold;
+		}
+
     </style>
 </head>
 <body>
 <div class="wrapper row1">
-  <header id="header" class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <header id="header" class="navbar navbar-expand-lg navbar-dark">
     <hgroup>
       <h1><a class="navbar-brand" href="home.jsp">BidZone Online Auction</a></h1>
     </hgroup>
@@ -105,12 +139,12 @@
     </div>
 </div>
 <!-- Footer -->
-<div id="footer" class="footer bg-primary text-white text-center">
+<!-- <div id="footer" class="footer bg-primary text-white text-center">
     <div class="container">
         <p class="mb-0">Copyright &copy; 2024 - All Rights Reserved</p>
         <p class="mb-0"><a href="contactUs.jsp" title="Website Templates"> Goa University</a></p>
     </div>
-</div>
+</div> -->
 <!-- Bootstrap JS -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>

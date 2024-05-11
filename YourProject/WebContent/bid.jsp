@@ -71,12 +71,45 @@
 		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow */
 		border-radius: 5px; /* Rounded corners */
 	}
+	#header {
+        background-color: #0056b3; /* Header background color */
+        color: #ffffff ; /* Header text color */
+        text-align: center;
+        padding: 20px 0;
+    }
+	
+	#header h1 {
+		margin: 0;
+		font-size: 28px;
+		font-weight: bold;
+		padding-left: 5%;
+	}
+	
+	#header h2 {
+		margin-top: 5px;
+		font-size: 18px;
+	}
+	
+	.topnav li {
+		display: inline;
+		padding: 0 10px;
+	}
+	
+	.topnav li a {
+		color: #fff;
+		text-decoration: none;
+		font-size: 16px;
+	}
+	
+	.topnav li.active a {
+		font-weight: bold;
+	}
 	</style>
 </head>
 <body>
 	<div class="wrapper row1">
 		<header id="header"
-			class="navbar navbar-expand-lg navbar-dark bg-primary">
+			class="navbar navbar-expand-lg navbar-dark">
 			<hgroup>
 				<h1>
 					<a class="navbar-brand ml-5" href="home.jsp">BidZone Online Auction</a>

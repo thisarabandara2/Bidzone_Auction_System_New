@@ -34,16 +34,24 @@ $(document).ready(function () {
   }
 
   header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px 0;
+    background-color: #278FFE;
+    color: #000;
+    padding: 0;
     text-align: center;
+    
   }
 
   .wrapper {
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .wrapper1 {
     width: 80%;
     margin: 0 auto;
   }
+  
+  
 
   .content {
     background-color: #fff;
@@ -77,7 +85,7 @@ $(document).ready(function () {
   }
 
   footer {
-    background-color: #333;
+    background-color: #278FFE;
     color: #fff;
     padding: 20px 0;
     text-align: center;
@@ -85,24 +93,63 @@ $(document).ready(function () {
     bottom: 0;
     width: 100%;
   }
+  .product-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.description {
+    margin-bottom: 5px; /* Add space between Description and Price */
+}
 </style>
 </head>
 <body>
-<header>
-  <h1><a href="home.jsp">E-Auction</a></h1>
-  <h2>Best Price, Best Products</h2>
-</header>
-<nav id="topnav">
-  <ul class="topnav clear">
-    <li><a href="home.jsp">Home</a></li>
-    <li class="active"><a href="products.jsp">Products</a></li>
-    <li><a href="aboutUs.jsp">About Us</a></li>
-    <li><a href="contactUs.jsp">Contact Us</a></li>
-    <li><a href="registration.jsp">Registration</a></li>
-    <li class="last"><a href="login.jsp">Log In</a></li>
-  </ul>
-</nav>
-<div class="wrapper">
+<div class="wrapper row1">
+  <header id="header" class="navbar navbar-expand-md navbar-dark bg-primary">
+    <hgroup>
+      <h1><a class="navbar-brand" style="background-color: #278FFE" href="home.jsp">Bidzone Auction</a></h1>
+    </hgroup>
+    <%
+    String userName = (String) request.getSession().getAttribute("username");
+    boolean isLoggedIn = userName != null;
+	%>
+    
+    <!-- ################################################################################################ -->
+    <nav id="topnav" class="ml-auto active">
+      <ul class="topnav clear navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link " style="background-color: #278FFE" href="home.jsp">Home</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" style="background-color: #278FFE" href="products.jsp">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="background-color: #278FFE" href="aboutUs.jsp">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="background-color: #278FFE" href="contactUs.jsp">Contact Us</a>
+        </li>
+        <% if (isLoggedIn) { %>
+            <li class="nav-item">
+                <a class="nav-link " style="background-color: #278FFE" href="userProfile.jsp"><%= userName %></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" style="background-color: #278FFE"  href="logout.jsp">Log Out</a>
+            </li>
+        <% } else { %>
+            <li class="nav-item">
+                <a class="nav-link" style="background-color: #278FFE"  href="registration.jsp">Registration</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" style="background-color: #278FFE"  href="login.jsp">Log In</a>
+            </li>
+        <% } %>
+      </ul>
+    </nav>
+    <div class="clear"></div>
+  </header>
+</div>
+<div class="wrapper1">
   <div class="content">
     <h2>Create an Auction </h2>
     <p>Choose a product to create an auction.</p>
@@ -114,10 +161,24 @@ $(document).ready(function () {
           while (i < size) {
               Products p = productList.get(i);
       %>
-            <li>Product Name: <a class="product-link" href="createAuction.jsp?pid=<%= p.getProductId() %>"><%= p.getProdname() %></a><form action="deleteProduct.jsp" method="post" style="display: inline;">
-          	<input type="hidden" name="productId" value="<%= p.getProductId() %>">
-          	<button type="submit" class="delete-btn">Delete</button>
-        	</form></li>
+            <li>
+            <div class="d-flex align-items-center">
+            <span class="flex-grow-1">Product Name: <a class="product-link" href="createAuction.jsp?pid=<%= p.getProductId() %>"><%= p.getProdname() %></a></span>
+            
+            <form action="ProductDeleteServletPath" method="post" style="display: inline;" accept-charset='UTF-8'>
+            
+    		<input type="hidden" name="productId" value="<%= p.getProductId() %>" class="flex-grow-1"> <!-- Use flex-grow-1 to make the input fill remaining space -->
+    		<button type="submit" class="delete-btn ml-auto">Delete Product</button> <!-- Use ml-auto to push the button to the end -->
+			
+        	</form>
+        	</div>
+        	<div class="product-info">
+    		<span class="description">Description: <%= p.getDescription() %></span>
+    		<span class="description">Category : <%= p.getCategory() %></span>
+    		<span class="price">Price: <%= p.getPrice() %></span>
+			</div>
+        	
+        	</li>
               
       <% 
               i++;

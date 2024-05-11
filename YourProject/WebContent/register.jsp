@@ -31,15 +31,20 @@ $(document).ready(function () {
 <div class="wrapper row1">
   <header id="header" class="navbar navbar-expand-lg navbar-dark bg-primary">
     <hgroup>
-      <h1><a class="navbar-brand" href="home.jsp">E-Auction</a></h1>
+      <h1><a class="navbar-brand" href="home.jsp">Bidzone Auction</a></h1>
     </hgroup>
+    <%
+    String userName = (String) request.getSession().getAttribute("username");
+    boolean isLoggedIn = userName != null;
+	%>
+    
     <!-- ################################################################################################ -->
-    <nav id="topnav">
+    <nav id="topnav" class="ml-auto active">
       <ul class="topnav clear navbar-nav ml-auto">
         <li class="nav-item">
           <a class="nav-link" href="home.jsp">Home</a>
         </li>
-        <li class="nav-item active">
+        <li class="nav-item ">
           <a class="nav-link" href="products.jsp">Products</a>
         </li>
         <li class="nav-item">
@@ -48,12 +53,21 @@ $(document).ready(function () {
         <li class="nav-item">
           <a class="nav-link" href="contactUs.jsp">Contact Us</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="registration.jsp">Registration</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="login.jsp">Log In</a>
-        </li>
+        <% if (isLoggedIn) { %>
+            <li class="nav-item">
+                <a class="nav-link" href="userProfile.jsp"><%= userName %></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="logout.jsp">Log Out</a>
+            </li>
+        <% } else { %>
+            <li class="nav-item">
+                <a class="nav-link" href="registration.jsp">Registration</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="login.jsp">Log In</a>
+            </li>
+        <% } %>
       </ul>
     </nav>
     <div class="clear"></div>

@@ -99,12 +99,18 @@ $(document).ready(function () {
                 <div class="form-group">
                   <label for="category">Category</label>
                   <select name="category" class="form-control">
-                    <option value="others">--others--</option>
-                    <option value="mouse">Mouse</option>
-                    <option value="monitor">Monitor</option>
-                    <option value="keyboard">Keyboard</option>
-                    <option value="CPU">CPU</option>
-                  </select>
+    				<option value="others">--others--</option>
+    				<option value="mobile_accesories">Mobile Accessories</option>
+    				<option value="furniture">Furniture</option>
+    				<option value="toys">Toys</option>
+    				<option value="electronics">Electronics</option>
+    				<option value="clothing">Clothing</option>
+    				<option value="jewelry">Jewelry</option>
+    				<option value="books">Books</option>
+    				<option value="collectibles">Collectibles</option>
+    				
+				</select>
+
                 </div>
                 <div class="form-group">
                   <label for="price">Price</label>

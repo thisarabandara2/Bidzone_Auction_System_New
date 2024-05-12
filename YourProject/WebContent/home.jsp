@@ -19,6 +19,10 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- Custom CSS -->
     <style>
+    	body {
+    	background-color: #EFEFEF; /* Light grey background */
+		}
+    
         /* Add custom styles here */
         .product-img {
             max-width: 100%;
@@ -68,6 +72,14 @@
             width: 100%;
             height: 60px; /* Height of the footer */
         }
+        .card {
+    	border: none;
+    	transition: transform 0.3s;
+    	width: 100%; /* Set default width */
+    	max-width: 500px; /* Set max width to maintain responsiveness */
+    	margin: 0 auto 20px; /* Center align and add bottom margin */
+    	height: 500px; /* Set card height */
+}
     </style>
 </head>
 <body>

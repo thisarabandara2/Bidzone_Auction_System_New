@@ -91,6 +91,16 @@ $(document).ready(function () {
 	.topnav li.active a {
 		font-weight: bold;
 	}
+	
+	.msg {
+		color: #00934D;
+		font-weight: bold;
+	}
+	.msgerr {
+		color: red;
+		font-weight: bold;
+	}
+	
 </style>
 </head>
 <body>
@@ -121,7 +131,7 @@ $(document).ready(function () {
         </li>
         <% if (isLoggedIn) { %>
             <li class="nav-item">
-                <a class="nav-link" href="userProfile.jsp"><%= userName %></a>
+                <a class="nav-link" ><%= userName %></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="logout.jsp">Log Out</a>
@@ -148,9 +158,17 @@ $(document).ready(function () {
      <%
     	if(request.getSession().getAttribute("message")!=null) {
     %>
-    	<h2><%=request.getSession().getAttribute("message") %></h2>
+    	<h2 class="msg"><%=request.getSession().getAttribute("message") %></h2>
     <%
     	request.getSession().removeAttribute("message");
+    	}
+    %>
+    <%
+    	if(request.getSession().getAttribute("messageerr")!=null) {
+    %>
+    	<h2 class="msgerr"><%=request.getSession().getAttribute("messageerr") %></h2>
+    <%
+    	request.getSession().removeAttribute("messageerr");
     	}
     %>
     <div id="homepage">
@@ -198,7 +216,7 @@ $(document).ready(function () {
           <a href="<%=request.getContextPath()%>/DisplayUsersProductsServletsPath?userId=<%= request.getSession().getAttribute("userId") %>" class="card text-center">
             <div class="card-body">
               <i class="fas fa-handshake fa-4x mb-3"></i>
-              <h5 class="card-title">Sell Your Product</h5>
+              <h5 class="card-title">Create Auction</h5>
               <p class="card-text">Create your Auction now!</p>
             </div>
           </a>

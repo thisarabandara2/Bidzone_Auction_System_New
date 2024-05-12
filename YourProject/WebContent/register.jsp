@@ -149,14 +149,21 @@
 	                  <label for="category">Category</label>
 	                  <select name="category" class="form-control">
 	                    <option value="others">--others--</option>
-	                    <option value="mouse">Mouse</option>
-	                    <option value="monitor">Monitor</option>
-	                    <option value="keyboard">Keyboard</option>
-	                    <option value="CPU">CPU</option>
+	                    <option value="electronics">Electronics</option>
+	                    <option value="home_appliance">Home Appliances</option>
+	                    <option value="fashion_and_accessories">Fashion and Accessories</option>
+	                    <option value="art_and_collectibles">Art and Collectibles</option>
+	                   	<option value="hume_and_garden">Home and Garden</option>
+	                    <option value="sports_and_fitness">Sports and Fitness</option>
+	                    <option value="toys_and_games">Toys and Games</option>
+	                    <option value="books_and_media">Books and Media</option>
+	                    <option value="automotive">Automotive</option>
+	                    <option value="health_and_beauty">Health and Beauty</option>
+	                    
 	                  </select>
 	                </div>
 	                <div class="form-group">
-	                  <label for="price">Price</label>
+	                  <label for="price">Starting Price</label>
 	                  <input type='text' class="form-control" name='price' required>
 	                </div>
 	                <div class="form-group">

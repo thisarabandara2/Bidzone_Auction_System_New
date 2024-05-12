@@ -176,7 +176,7 @@
 							        <!-- Left column for details -->
 							        <div class="col-md-6">
 							            <!-- Product Name: --> <h3> <%= pro.getProdname() %> </h3> 
-							            <p>Product Price (LKR): <%= pro.getPrice() %></p>
+							            <p>Latest Bid (LKR) : <%= pro.getPrice() %></p>
 							            <a href="placebid.jsp?aid=<%= a.getAuctionId() %>" class="btn btn-primary">Place Bid</a>
 							        </div>
 							        <!-- Right column for the product image -->

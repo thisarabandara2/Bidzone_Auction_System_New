@@ -62,7 +62,7 @@
     
     <style>
         body {
-            padding-top: 60px; /* Adjusted to accommodate the fixed header */
+           /*  padding-top: 60px; */ /* Adjusted to accommodate the fixed header */
             background-color: #f8f9fa; /* Background color */
         }
        #header {
@@ -103,10 +103,25 @@
     </style>
 </head>
 <body>
+<%-- <div class="container">
+        Check for error message in session and display it
+        <% String errorMessage = (String) request.getSession().getAttribute("errorMessage"); %>
+        <% if (errorMessage != null && !errorMessage.isEmpty()) { %>
+            <div class="alert alert-danger" role="alert">
+                <%= errorMessage %>
+            </div>
+        <% } %>
+</div> --%>
+
+
 <header id="header">
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
         <a class="navbar-brand" href="home.jsp">BidZone Online Auction</a>
+        <%
+    String userName = (String) request.getSession().getAttribute("username");
+    boolean isLoggedIn = userName != null;
+	%>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -124,13 +139,21 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="contactUs.jsp">Contact Us</a>
-                </li>
-                <li class="nav-item">
-                   <a class="nav-link" href="registration.jsp">Registration</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="login.jsp">Login</a>
-                </li>
+                <% if (isLoggedIn) { %>
+            <li class="nav-item">
+                <a class="nav-link" ><%= userName %></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="logout.jsp">Log Out</a>
+            </li>
+        <% } else { %>
+            <li class="nav-item">
+                <a class="nav-link" href="registration.jsp">Registration</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="login.jsp">Log In</a>
+            </li>
+        <% } %>
             </ul>
         </div>
     </nav>

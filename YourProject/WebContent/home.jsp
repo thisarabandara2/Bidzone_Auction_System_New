@@ -141,7 +141,7 @@
                             Connection connection = null;
                             Class.forName("com.mysql.jdbc.Driver").newInstance();
 
-                            connection = DriverManager.getConnection(connectionURL, "root","root");
+                            connection = DriverManager.getConnection(connectionURL, "root","12345678");
 
                             stmt = connection.createStatement();
                             qryStr = "SELECT * from Products";

@@ -119,7 +119,7 @@
                         <div class="row no-gutters">
                             <div class="col-md-8">
                                 <div class="card-body product-details">
-                                    <h5 class="card-title"><%= p.getProdname() %></h5>
+                                    <h5 class="card-title"><a class="product-link" href="createAuction.jsp?pid=<%= p.getProductId() %>"><%= p.getProdname() %></a></h5>
                                     <p class="card-text"><%= p.getDescription() %></p>
                                     <form class="delete-form" action="deleteProduct" method="post">
                                         <input type="hidden" name="productId" value="<%= p.getProductId() %>">

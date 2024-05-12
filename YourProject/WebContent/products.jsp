@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-<title>E-Auction | </title>
+<title>BidZone Online Auction </title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Bootstrap CSS -->
@@ -29,49 +29,75 @@ $(document).ready(function () {
 <script src="scripts/html5shiv.min.js"></script>
 <![endif]-->
 <style>
-.card {
-    border: none;
-    border-radius: 10px;
-    transition: all 0.3s;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-.card-body {
-    padding: 20px;
-}
-.card-title {
-    font-size: 18px;
-    margin-bottom: 15px;
-}
-.card-text {
-    font-size: 14px;
-    color: #666;
-}
-/* Lock footer to bottom */
-html {
-  position: relative;
-  min-height: 100%;
-}
-body {
-  margin-bottom: 60px; /* Margin bottom by footer height */
-}
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 60px; /* Set the fixed height of the footer here */
-  background-color: #f5f5f5;
-}
+	.card {
+	    border: none;
+	    border-radius: 10px;
+	    transition: all 0.3s;
+	    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	}
+	.card:hover {
+	    transform: translateY(-5px);
+	    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+	}
+	.card-body {
+	    padding: 20px;
+	}
+	.card-title {
+	    font-size: 18px;
+	    margin-bottom: 15px;
+	}
+	.card-text {
+	    font-size: 14px;
+	    color: #666;
+	}
+	/* Lock footer to bottom */
+	html {
+	  position: relative;
+	  min-height: 100%;
+	}
+	body {
+	  margin-bottom: 60px; /* Margin bottom by footer height */
+	}
+	.footer {
+	  position: absolute;
+	  bottom: 0;
+	  width: 100%;
+	  height: 60px; /* Set the fixed height of the footer here */
+	  background-color: #f5f5f5;
+	}
+	#header {
+       background-color: #0056b3; /* Header background color */
+       color: #ffffff ; /* Header text color */
+       text-align: center;
+       padding: 20px 0;
+     }
+	#header h1 {
+		margin: 0;
+		font-size: 28px;
+		font-weight: bold;
+		padding-left: 5%;
+	}
+	.topnav li {
+		display: inline;
+		padding: 0 10px;
+	}
+	
+	.topnav li a {
+		color: #fff;
+		text-decoration: none;
+		font-size: 16px;
+	}
+		
+	.topnav li.active a {
+		font-weight: bold;
+	}
 </style>
 </head>
 <body>
 <div class="wrapper row1">
-  <header id="header" class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <header id="header" class="navbar navbar-expand-lg navbar-dark">
     <hgroup>
-      <h1><a class="navbar-brand" href="home.jsp">E-Auction</a></h1>
+      <h1><a class="navbar-brand" href="home.jsp">BidZone Online Auction</a></h1>
     </hgroup>
     <%
     String userName = (String) request.getSession().getAttribute("username");
@@ -196,7 +222,7 @@ body {
   <footer id="copyright" class="footer bg-primary text-white py-4">
     <div class="container text-center">
       <p class="mb-0">Copyright &copy; 2024 - All Rights Reserved </p>
-      <p class="mb-0"><a href="products.jsp" title="Website Templates"> University Of Ruhuna</a></p>
+      <p class="mb-0"><a href="products.jsp" title="Website Templates"></a></p>
     </div>
   </footer>
 </div>

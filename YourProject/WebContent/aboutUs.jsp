@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Auction | </title>
+    <title>BidZone Online Auction </title>
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Cosmo theme -->
@@ -44,13 +44,46 @@
             text-align: center;
             padding-top: 20px; /* Adjust padding based on footer content */
         }
+        #header {
+        background-color: #0056b3; /* Header background color */
+        color: #ffffff ; /* Header text color */
+        text-align: center;
+         padding: 20px 0;
+	    }
+		
+		#header h1 {
+			margin: 0;
+			font-size: 28px;
+			font-weight: bold;
+			padding-left: 5%;
+		}
+		
+		#header h2 {
+			margin-top: 5px;
+			font-size: 18px;
+		}
+		
+		.topnav li {
+			display: inline;
+			padding: 0 10px;
+		}
+		
+		.topnav li a {
+			color: #fff;
+			text-decoration: none;
+			font-size: 16px;
+		}
+		
+		.topnav li.active a {
+			font-weight: bold;
+		}
     </style>
 </head>
 <body>
 <div class="wrapper row1">
-  <header id="header" class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <header id="header" class="navbar navbar-expand-lg navbar-dark ">
     <hgroup>
-      <h1><a class="navbar-brand" href="home.jsp">E-Auction</a></h1>
+      <h1><a class="navbar-brand" href="home.jsp">BidZone Online Auction</a></h1>
     </hgroup>
     <%
     String userName = (String) request.getSession().getAttribute("username");

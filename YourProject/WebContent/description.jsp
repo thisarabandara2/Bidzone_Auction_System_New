@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Auction | </title>
+    <title>BidZone Online Auction </title>
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Cosmo theme -->
@@ -30,7 +30,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container">
-        <a class="navbar-brand" href="home.jsp">E-Auction</a>
+        <a class="navbar-brand" href="home.jsp">BidZone Online Auction</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -50,7 +50,7 @@
                     <a class="nav-link" href="contactUs.jsp">Contact Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="registration.jsp">Registration</a>
+                     <a class="nav-link" href="registration.jsp">Registration</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="login.jsp">Login</a>

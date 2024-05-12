@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Auction | Login</title>
+    <title>BidZone Online Auction</title>
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Cosmo theme -->
@@ -33,40 +33,46 @@
             margin-bottom: 60px; /* Margin to prevent content from being hidden behind the footer */
             background-color: #f8f9fa; /* Background color */
         }
-        #header {
-            background-color: #007bff; /* Header background color */
-            color: #fff; /* Header text color */
-            text-align: center;
-            padding: 20px 0;
-        }
-        #header h1 {
-            margin: 0;
-            font-size: 28px;
-            font-weight: bold;
-        }
-        #header h2 {
-            margin-top: 5px;
-            font-size: 18px;
-        }
-        .topnav li {
-            display: inline;
-            padding: 0 10px;
-        }
-        .topnav li a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 16px;
-        }
-        .topnav li.active a {
-            font-weight: bold;
-        }
+      #header {
+        background-color: #0056b3; /* Header background color */
+        color: #ffffff ; /* Header text color */
+        text-align: center;
+         padding: 20px 0;
+	    }
+		
+		#header h1 {
+			margin: 0;
+			font-size: 28px;
+			font-weight: bold;
+			padding-left: 5%;
+		}
+		
+		#header h2 {
+			margin-top: 5px;
+			font-size: 18px;
+		}
+		
+		.topnav li {
+			display: inline;
+			padding: 0 10px;
+		}
+		
+		.topnav li a {
+			color: #fff;
+			text-decoration: none;
+			font-size: 16px;
+		}
+		
+		.topnav li.active a {
+			font-weight: bold;
+		}
         .footer {
             position: fixed;
             bottom: 0;
             width: 100%;
             height: 60px;
             background-color: #343a40;
-            color: #fff;
+            color: #ffffff ;
             text-align: center;
             padding-top: 20px;
         }
@@ -99,7 +105,7 @@
             padding: 10px;
             margin: 10px 0 0;
             border: none;
-            border-radius: 4px;
+            border-radius: 10px;
             cursor: pointer;
             background-color: #007bff;
             color: #fff;
@@ -112,14 +118,20 @@
         .login-form button[type="reset"]:hover {
             background-color: #0056b3;
         }
+        #headerNav{
+        	 background-color: #0056b3;
+        }
+        h2{
+        	font-weight: bold;
+        }
     </style>
 </head>
 <body>
 <div class="wrapper row1">
     <header id="header">
         <!-- Navigation -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <a class="navbar-brand" href="home.jsp">E-Auction</a>
+        <nav class="navbar navbar-expand-lg navbar-dark" id="headerNav">
+            <a class="navbar-brand" href="home.jsp">BidZone Online Auction</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -173,7 +185,7 @@
                         <input type="password" class="form-control" id="password" name="password" maxlength="50" required>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
-                    <button type="reset" class="btn btn-secondary">Reset</button>
+                   <!--  <button type="reset" class="btn btn-secondary">Reset</button> -->
                 </form>
             </div>
         </section>
@@ -181,11 +193,11 @@
     </div>
 </div>
 <!-- Footer -->
-<div class="footer bg-primary text-white text-center">
+<!-- <div class="footer bg-primary text-white text-center">
     <div class="container">
         <p class="mb-0">Copyright &copy; 2024 - All Rights Reserved</p>
-        <p class="mb-0"><a href="login.jsp" title="Website Templates"> Goa University</a></p>
+        <p class="mb-0"><a href="login.jsp" title="Website Templates"></a></p>
     </div>
-</div>
+</div> -->
 </body>
 </html>

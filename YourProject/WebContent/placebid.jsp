@@ -1,11 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page import="com.myclasses.java.Auction"%>
+<%@ page import="com.myclasses.java.Products"%>
+<%@ page import="com.mybusiness.services.ProductService"%>
+<%@ page import="java.util.*"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Auction | </title>
+    <title>BidZone Online Auction</title>
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Cosmo theme -->
@@ -23,26 +27,70 @@
                 prependTo: 'nav#topnav'
             });
         });
+        
+        function validatePrice() {
+            var priceInput = document.getElementById('price');
+            var priceValue = priceInput.value.trim();
+
+            // Regular expression to allow only digits
+            var regex = /^[0-9]+$/;
+
+            if (!regex.test(priceValue)) {
+                document.getElementById('priceError').textContent = 'Please enter a valid amount!';
+                return false; // Prevent form submission
+            } else {
+                document.getElementById('priceError').textContent = '';
+                return true; // Allow form submission
+            }
+        }
+        
+        
+        function validateForm() {
+            if (validatePrice()) {
+                return true; // Form submission allowed if price is valid
+            } else {
+                alert('Please enter a valid amount!');
+                return false; // Prevent form submission
+            }
+        }
+        
     </script>
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    
     <style>
         body {
             padding-top: 60px; /* Adjusted to accommodate the fixed header */
             background-color: #f8f9fa; /* Background color */
         }
-        #header {
-            background-color: #007bff; /* Header background color */
-            color: #fff; /* Header text color */
+       #header {
+            background-color: #0056b3; /* Header background color */
+            color: #ffffff ; /* Header text color */
             text-align: center;
             padding: 20px 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000; /* Ensure header is on top */
         }
+		#header h1 {
+			margin: 0;
+			font-size: 28px;
+			font-weight: bold;
+			padding-left: 5%;
+		}
+		.topnav li {
+			display: inline;
+			padding: 0 10px;
+		}
+		
+		.topnav li a {
+			color: #fff;
+			text-decoration: none;
+			font-size: 16px;
+		}
+		
+		.topnav li.active a {
+			font-weight: bold;
+		}
         .footer {
             background-color: #343a40;
             color: #fff;
@@ -58,7 +106,7 @@
 <header id="header">
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" href="home.jsp">E-Auction</a>
+        <a class="navbar-brand" href="home.jsp">BidZone Online Auction</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -78,7 +126,7 @@
                     <a class="nav-link" href="contactUs.jsp">Contact Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="registration.jsp">Registration</a>
+                   <a class="nav-link" href="registration.jsp">Registration</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="login.jsp">Login</a>
@@ -98,29 +146,34 @@
                         <h3 class="text-center">Create an Auction</h3>
                     </div>
                     <div class="card-body">
-                        <%
-                            int aid = Integer.parseInt(request.getParameter("aid"));
+                         <%
+                            int aid = Integer.parseInt(request.getParameter("aid"));  
                         %>
-                        <form action="PlaceNewBidServletPath?aid=<%= aid %>" method="post">
-                            <div class="form-group">
-                                <label for="price">Price</label>
-                                <input type="text" class="form-control" name="price" id="price">
-                            </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                            <button type="reset" class="btn btn-secondary">Reset</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-</div>
+                        <div class="auction-item">
+                            <div class="row">
+                                <!-- Left column for details -->
+                                <div class="col-md-6">
+                        			<form action="PlaceNewBidServletPath?aid=<%= aid %>" method="post">
+			                            <div class="form-group">
+			                                <label for="price">Price (SLR)</label>
+			                                <input type="text" class="form-control" name="price" id="price" oninput="validatePrice()">
+			                            	<small id="priceError" class="text-danger"></small>
+			                            </div>
+		                            <button type="submit" class="btn btn-primary">Submit</button>
+		                            <button type="reset" class="btn btn-secondary">Reset</button>
+                        		</form>
+                    		</div>
+               			 </div>
+           			 </div>
+        		</div>
+   		 </section>
+	</div>
 
 <!-- Footer -->
 <div class="footer">
     <div class="container">
         <p class="mb-0">Copyright &copy; 2024 - All Rights Reserved</p>
-        <p class="mb-0"><a href="contactUs.jsp" title="Website Templates"> Goa University</a></p>
+        <p class="mb-0"><a href="contactUs.jsp" title="Website Templates"></a></p>
     </div>
 </div>
 
